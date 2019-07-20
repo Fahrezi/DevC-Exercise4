@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercise 3</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<style>
+    body {
+        background-image: linear-gradient(to bottom right, rgb(79, 180, 248), rgb(114, 196, 250));
+    }
+</style>
+<body>
+    <h1 class="display-4 text-center">Menampilkan Data dari JSON</h1>
+    <h2 class="text-center" style="">Planet</h2>
+    <pre>
+    <table class="table table-striped" style="">
+        <thead id="thead">
+            <tr class="text white">
+                <th scope="col">#</th>
+                <th scope="col-1">Nama</th>
+                <th scope="col">Rotation Period</th>
+                <th scope="col">Orbital Period</th>
+                <th scope="col">Diameter</th>
+                <th scope="col">Climate</th>
+                <th scope="col">Gravity</th>
+                <th scope="col">Terrain</th>
+                <th scope="col">Surface Water</th>
+                <th scope="col">Population</th>
+                <th scope="col">Residents</th>
+                <th scope="col">Films</th>
+                <th scope="col">Created</th>
+                <th scope="col">Edited</th>
+                <th scope="col">URL</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            
+        </tbody>
+    </table>
+    </pre>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script> 
+    <script>
+        $(document).ready(function(){
+            tampilData();
+        });
+        var i = 0;
+        var tambah = i++;
+        var tbody = document.getElementById("tbody");
+        function tampilData() {
+            $.getJSON('data.json', function(data){
+                    for(person of data.results) {
+                        tbody.innerHTML += "<tr><td scope='row'>"+i+"</td><td>"+ person.name+"</td><td>"+ person.rotation_period +"</td><td>"+ person.orbital_period +"</td><td>"+ person.diameter +"</td><td>"+ person.climate +"</td><td>"+ person.gravity +"</td><td>"+ person.terrain +"</td><td>"+ person.surface_water +"</td><td>"+ person.population +"</td><td>"+ person.residents +"</td><td>"+ person.films +"</td><td>"+ person.created +"</td><td>"+ person.edited +"</td><td>"+ person.url +"</td></tr>";
+                        i++;
+                    }
+            });
+        }
+        
+    </script>
+    
+</body>
+</html>

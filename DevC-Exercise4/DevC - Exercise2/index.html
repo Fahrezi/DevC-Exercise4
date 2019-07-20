@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+  <body>
+    <h2 class="headerCalc">Calculator Sederhana</h2>
+       <div class="row mb-4 calculator">
+            <input id="bilanganSatu" type="text" class="form-control col-3 mr-5" value="">
+            <select id="operator" name="operator" id="">
+                <option value="addition">+</option>
+                <option value="substraction">-</option>
+                <option value="multiple">x</option>
+                <option value="division">/</option>
+            </select>
+            <input id="bilanganDua" type="text" class="form-control col-3 ml-5" value="">
+       </div> 
+       <div class="row hasil">
+            <h3 id="hasilCalc"></h3>
+       </div>
+       <div class="row hasil">
+          <button class="btn btn-primary" onclick="hasil()">Hasil</button>
+       </div>
+
+      <script>
+          function hasil(val1, val2) {
+            var val1 = parseInt(document.getElementById("bilanganSatu").value);
+            var val2 = parseInt(document.getElementById("bilanganDua").value);
+            var opr = document.getElementById("operator").value;
+
+            
+            var hasil = document.getElementById("hasilCalc").innerHTML = operate(val1, val2, opr);
+            hasil;
+            if (hasil == "Infinity") {
+              alert("Jangan Dibagi 0");
+              location.reload();
+            }
+           }
+
+
+          function operate(val1, val2, opr) {
+                if(opr == 'addition') {
+                    return val1 + val2;
+                }else if(opr == 'substraction') {
+                    return val1 - val2;
+                }else if(opr == 'multiple') {
+                    return val1 * val2;
+                }else if(opr == 'division') {
+                    return val1 / val2;
+                }
+          } 
+
+
+
+
+      </script>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

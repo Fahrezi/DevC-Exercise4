@@ -1,0 +1,15 @@
+.h-500 {
+    height: 500px;
+}
+
+.bg-gradient-primary {
+    background-image: linear-gradient(to bottom right, rgb(79, 180, 248), rgb(114, 196, 250));
+}
+
+.bg-gradient-info {
+    background-image: linear-gradient(to bottom left, rgb(52, 142, 202), rgb(151, 208, 246));
+}
+
+.bg-gradient-warning {
+    background-image: linear-gradient(to bottom right, rgb(248, 217, 79), rgb(250, 236, 114));
+}

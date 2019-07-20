@@ -1,0 +1,23 @@
+body, html {
+    height: 100%;
+}
+
+body {
+    background-image: linear-gradient(to bottom right, rgb(79, 180, 248), rgba(0,0,0,0));
+    background-repeat: no-repeat;
+}
+
+.headerCalc {
+    font-family: 'Pacifico', cursive;
+    margin-left: 39%;
+    margin-top: 10%;
+}
+
+.calculator {
+    margin-left: 350px;
+    margin-top: 50px;
+}
+
+.hasil {
+    margin-left: 47.5%;
+}
